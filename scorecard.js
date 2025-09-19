@@ -32,3 +32,4 @@ function test(courses, holes) {
     }
 }
 test(courses, holes);
+console.log("fsjofodf");
