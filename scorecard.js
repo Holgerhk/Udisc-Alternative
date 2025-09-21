@@ -2,9 +2,19 @@ class Course {
     constructor(location, par) {
         this.location = location;
         this.par = par;
+        this.holes = [];
     }
     show() {
         console.log("Location: "+ this.location + " , par: " + this.par);
+    }
+}
+
+class Hole {
+    constructor(hole) {
+        this.hole = hole;
+    }
+    show() {
+        console.log(this.hole);
     }
 }
 
@@ -32,7 +42,7 @@ const coursesData = [
         {number: 18, par: 4, length: 132}
     ]},
     {location: "Tilst Park", 
-    par: 65,
+    totalPar: 65,
     holes: [
         {number: 1, par: 3, length: 73}, 
         {number: 2, par: 3, length: 84},
@@ -56,6 +66,8 @@ const coursesData = [
 ];
 
 coursesData.forEach(data => {
-    const course = new Course(data.location, data.par);
+    const course = new Course(data.location, data.totalPar);
+    const hole = new Hole(data.holes);
     course.show();
+    hole.show();
 });
