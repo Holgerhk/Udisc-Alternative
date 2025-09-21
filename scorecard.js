@@ -65,9 +65,17 @@ const coursesData = [
     ]}
 ];
 
+let myCourses = [];
+
 coursesData.forEach(data => {
     const course = new Course(data.location, data.totalPar);
-    const hole = new Hole(data.holes);
+    data.holes.forEach(hole => {
+        const holeTemp = new Hole(hole);
+        holeTemp.show();
+        course.holes.push(holeTemp);
+    });
+    myCourses.push(course);
     course.show();
-    hole.show();
 });
+
+console.log(myCourses);
