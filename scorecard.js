@@ -2,7 +2,6 @@ class Course {
     constructor(location, par) {
         this.location = location;
         this.par = par;
-        this.holes = [];
     }
     show() {
         console.log("Location: "+ this.location + " , par: " + this.par);
@@ -15,6 +14,12 @@ class Hole {
     }
     show() {
         console.log(this.hole);
+    }
+}
+
+class scorecard {
+    constructor(scores) {
+        this.scores = scores;
     }
 }
 
@@ -78,4 +83,13 @@ coursesData.forEach(data => {
     course.show();
 });
 
-console.log(myCourses);
+const scoreData = [
+    { ryhavenSkanderborg: [
+        {number: 1, score: 3},
+        {number: 2, score: 2},
+        {number: 3, score: 3},
+        {number: 4, score: 5},
+        {number: 5, score: 2},
+        {number: 6, score: 3}
+    ]}
+]
